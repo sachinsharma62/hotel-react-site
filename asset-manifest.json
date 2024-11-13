@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hotel-react-site/static/css/main.90321e76.css",
-    "main.js": "/hotel-react-site/static/js/main.073fb774.js",
+    "main.js": "/hotel-react-site/static/js/main.2ce98b28.js",
     "static/js/453.c46bfe59.chunk.js": "/hotel-react-site/static/js/453.c46bfe59.chunk.js",
     "static/media/app-design-bg.svg": "/hotel-react-site/static/media/app-design-bg.9e074bb1a2bf7399ec1b.svg",
     "static/media/logo-typo-bg.svg": "/hotel-react-site/static/media/logo-typo-bg.2c15f9068ac514dfeace.svg",
@@ -56,11 +56,11 @@
     "index.html": "/hotel-react-site/index.html",
     "static/media/thanku-bg.svg": "/hotel-react-site/static/media/thanku-bg.fd6b13d65cfb437bbcda.svg",
     "main.90321e76.css.map": "/hotel-react-site/static/css/main.90321e76.css.map",
-    "main.073fb774.js.map": "/hotel-react-site/static/js/main.073fb774.js.map",
+    "main.2ce98b28.js.map": "/hotel-react-site/static/js/main.2ce98b28.js.map",
     "453.c46bfe59.chunk.js.map": "/hotel-react-site/static/js/453.c46bfe59.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90321e76.css",
-    "static/js/main.073fb774.js"
+    "static/js/main.2ce98b28.js"
   ]
 }
