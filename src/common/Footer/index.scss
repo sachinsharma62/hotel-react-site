@@ -1,0 +1,67 @@
+@import '../scss/common.scss';
+
+.newsletter{
+  z-index: 1;
+  position: relative;
+}
+.footer{
+  position: relative;
+  margin-top: -110px;
+  padding-top: 180px;
+
+  .section-title{
+    position: relative;
+    display: inline-block;
+    &::after{
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      right: -55px;
+      margin-top: -1px;
+      background: $primary-color;
+    }
+  }
+  .social-btn{
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $white;
+    border-radius: 35px;
+    transition: .3s;
+    padding: 7px;
+    svg{
+      color: $white;
+    }
+  }
+  .footer-link{
+    display: flex;
+    align-items:center;
+    color: $text-light;
+    transition: .3s;
+    margin-bottom: 5px;
+
+    &:hover{
+      letter-spacing: 1px;
+      box-shadow: none;
+    }
+    svg{
+      margin-right: 5px;
+    }
+   
+  }
+  .copyright{
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+
+    a{
+      color: $text-light;
+    }
+  }
+}

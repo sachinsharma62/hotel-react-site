@@ -1,0 +1,56 @@
+@import '../scss/common.scss';
+.testimonial{
+    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../../assets/images/carousel-2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 90px;
+
+    .testimonial-wrapper{
+        padding-left: 65px;
+        padding-right: 65px;
+
+        .testimonial-item{
+            background-color: $white;
+            margin-right: 12px;
+            margin-left: 12px;
+            border-radius: 4px;
+            padding:30px ;
+            position: relative;
+
+            .testimonial-details{
+                font-size: 19px;
+                letter-spacing: 1;
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 4px;
+            }
+            svg{
+                position: absolute;
+                bottom: 0;
+                right: 20px;
+                font-size: 45px;
+                color: $primary-color;
+            }
+        }
+    }
+    button{
+        width: 40px;
+        height: 40px;
+        background-color: $primary-color;
+        border-radius: 1px;
+
+        &:hover ,&:focus{
+            background-color: $primary-color;
+
+        }
+    }
+    .slick-prev{
+        left: 5px;
+    }
+    .slick-next{
+        right: 5px;
+    }
+}

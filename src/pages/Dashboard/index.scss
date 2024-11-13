@@ -1,0 +1,87 @@
+@import '../../common/scss/common.scss' ;
+.main-container{
+    
+    .video-section{
+        .sub-section-header{
+            h1{
+                font-size: 3.5rem;
+            }
+            
+        }
+        .video{
+            position: relative;
+            height: 100%;
+            min-height: 500px;
+            background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../../assets/images/video.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .btn-play{
+                position: absolute;
+                z-index: 3;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                box-sizing: content-box;
+                display: block;
+                width: 32px;
+                height: 44px;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                padding: 18px 20px 18px 28px;
+
+                &:before{
+                    content: "";
+                    position: absolute;
+                    z-index: 0;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    background: $primary-color ;
+                    border-radius: 50%;
+                    animation: pulse-border 1500ms ease-out infinite;
+                }
+
+                &:after{
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    background: $primary-color;
+                    border-radius: 50%;
+                    transition: all 200ms;
+                }
+                span{
+                    display: block;
+                    position: relative;
+                    z-index: 3;
+                    width: 0;
+                    height: 0;
+                    border-left: 32px solid $background-dark;
+                    border-top: 22px solid transparent;
+                    border-bottom: 22px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}

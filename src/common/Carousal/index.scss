@@ -1,0 +1,21 @@
+@import '../scss/common.scss';
+.carousel{
+    .carousel-inner{
+        .carousel-caption{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 43, .7);
+            z-index: 1;
+
+            .carousel-text{
+                max-width: 700px;
+                
+                h1{
+                    font-size: 5.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import '../scss/common.scss';
+.service-item{
+    height: 320px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+
+    .service-icon{
+        margin: 0 auto 30px auto;
+        color:$primary-color;
+        width: 65px;
+        height: 65px;
+        transition: .5s;
+        font-size:2rem;
+    }
+    h4{
+        color:$background-dark;
+    }
+    p{
+        font-size:19px;
+    }
+    &:hover{
+        background: $primary-color;
+        color:$white;
+        .service-icon{
+            color:$white !important;
+        }
+        h4{
+            color:$white;
+        }
+        p{
+            color:$white !important;
+        }
+
+    }
+}

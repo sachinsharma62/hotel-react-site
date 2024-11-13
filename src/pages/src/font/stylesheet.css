@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-Bold.woff') format('woff'),
+        url('ChakraPetch-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-Medium.woff') format('woff'),
+        url('ChakraPetch-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-SemiBold.woff') format('woff'),
+        url('ChakraPetch-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-Regular.woff') format('woff'),
+        url('ChakraPetch-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-Light.woff') format('woff'),
+        url('ChakraPetch-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('SansationBold.woff') format('woff'),
+        url('SansationBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('SansationRegular.woff') format('woff'),
+        url('SansationRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,33 @@
+@import '../scss/common.scss';
+
+
+
+
+.navbar{
+  
+  .navbar-toggler{
+    border-color: $white;
+    span{
+      color: $white;
+    }
+  }
+  .logo{
+    color:$primary-color;
+  }
+  .nav-link{
+    margin-right: 30px;
+    padding: 25px 0;
+    color: $white;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+
+    &:hover{
+      color: $primary-color;
+    }
+    &.active{
+      color: $primary-color !important;
+    }
+    
+  }
+}
