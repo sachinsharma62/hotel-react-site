@@ -9,7 +9,7 @@ import About from './pages/About';
 import Service from './pages/Service';
 // import Diagram from './pages/Diagram';
 // import EvChargingApp from './pages/EvChargingApp';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Contact from './pages/Contact';
 import PageMenu from './common/PageMenu';
 import Footer from './common/Footer';
