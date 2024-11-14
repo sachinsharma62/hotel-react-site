@@ -39,10 +39,10 @@ const PageMenu = () => {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className=''>
                   <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/About">About</Nav.Link>
-                    <Nav.Link href="/Service">Services</Nav.Link>
-                    <Nav.Link href="/Rooms">Rooms</Nav.Link>
+                    <Nav.Link href="#/">Home</Nav.Link>
+                    <Nav.Link href="#/About">About</Nav.Link>
+                    <Nav.Link href="#/Service">Services</Nav.Link>
+                    <Nav.Link href="#/Rooms">Rooms</Nav.Link>
                     <NavDropdown title="Pages" id="basic-nav-dropdown">
                       <NavDropdown.Item href="#action/3.1">Action </NavDropdown.Item>
                       <NavDropdown.Item href="#action/3.2">
@@ -54,7 +54,7 @@ const PageMenu = () => {
                         Separated link
                       </NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="/Contact">Contact</Nav.Link>
+                    <Nav.Link href="#/Contact">Contact</Nav.Link>
 
                   </Nav>
                   <a href='phonepe://pay?amount=10&phonenumber=6265480149' className='premium-btn btn btn-primary px-5 py-4 rounded-0 d-none d-lg-block h-100'>
