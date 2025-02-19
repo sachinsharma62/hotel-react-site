@@ -47,7 +47,31 @@ const TestimonialSection = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024, // 1024px se chhoti screen pe ye settings apply hogi
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // 768px se chhoti screen pe ye settings apply hogi
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // 480px se chhoti screen pe ye settings apply hogi
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+  
 
   return (
     <>

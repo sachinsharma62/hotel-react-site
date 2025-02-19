@@ -13,7 +13,7 @@ function AboutSection() {
   return (
     <>
       <Container className='py-5'>
-        <Row className='g-5'>
+        <Row className='g-4'>
           <Col lg={6} className='about-section-details'>
             <div className='sub-section-header text-uppercase'>
               <h4 className='textPrimary back-Primary'>Our Team</h4>

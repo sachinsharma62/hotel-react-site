@@ -37,7 +37,7 @@ function Carousal() {
      <Carousel className='mb-5'>
       {items.map((item, index) => (
         <Carousel.Item key={index}>
-          <img className="d-block w-100" src={item.src} alt={item.alt} />
+          <img className="d-block " src={item.src} alt={item.alt} />
           <Carousel.Caption as="div" className='d-flex flex-column justify-content-center align-items-center'><div className='carousel-text p-2'>{item.caption}</div></Carousel.Caption>
         </Carousel.Item>
       ))}

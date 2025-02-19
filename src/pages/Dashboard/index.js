@@ -18,7 +18,7 @@ const Dashboard = () => {
           <Container fluid="xxl" className='py-5 px-0 video-section'>
             <Row className='g-0'>
               <Col md={6} className='back-dark d-flex align-items-center'>
-                <div className="p-5 sub-section-header">
+                <div className="p-4 sub-section-header">
                   <h6 className=" text-start textLight text-uppercase mb-3">Luxury Living</h6>
                   <h1 className="textLight mb-4">Discover A Brand Luxurious Hotel</h1>
                   <p className="textLight mb-4 f-19">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
