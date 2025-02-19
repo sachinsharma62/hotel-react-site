@@ -10,8 +10,6 @@ import Service from './pages/Service';
 // import Diagram from './pages/Diagram';
 // import EvChargingApp from './pages/EvChargingApp';
 import { HashRouter as Router, Routes, Route} from 'react-router-dom';
-import moment from "moment";
-import Datetime from "react-datetime";
 import Contact from './pages/Contact';
 import PageMenu from './common/PageMenu';
 import Footer from './common/Footer';

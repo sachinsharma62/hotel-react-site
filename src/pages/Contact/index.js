@@ -3,8 +3,6 @@ import { FaEnvelopeOpen } from 'react-icons/fa';
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import { Container, Form, Button, Row, Col, FloatingLabel } from 'react-bootstrap';
-import moment from "moment";
-import Datetime from "react-datetime";
 import PageHeader from '../../common/PageHeader'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
