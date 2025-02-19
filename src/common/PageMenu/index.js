@@ -1,7 +1,6 @@
 import './index.scss';
 import { Container, Nav, Navbar, NavDropdown, Col, Row } from 'react-bootstrap';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import { Link } from "react-router-dom";
 import { BsFacebook, BsInstagram, BsSkype, BsSnapchat, BsTelegram } from 'react-icons/bs';
 
 

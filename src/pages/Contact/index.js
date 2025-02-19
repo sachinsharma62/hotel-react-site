@@ -7,13 +7,13 @@ import PageHeader from '../../common/PageHeader'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const Contact = () => {
-  // const defaultProps = {
-  //   center: {
-  //     lat: 10.99835602,
-  //     lng: 77.01502627
-  //   },
-  //   zoom: 11
-  // };
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627
+    },
+    zoom: 11
+  };
   return (
     <>
       <PageHeader />
@@ -51,7 +51,7 @@ const Contact = () => {
             </Row>
           </Col>
           <Col md={6}>
-            {/* <GoogleMapReact
+            <GoogleMapReact
               bootstrapURLKeys={{ key: "" }}
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
@@ -61,7 +61,7 @@ const Contact = () => {
                 lng={30.337844}
                 text="My Marker"
               />
-            </GoogleMapReact> */}
+            </GoogleMapReact>
           </Col>
           <Col md={6} className='contact-form'>
             <Form>
