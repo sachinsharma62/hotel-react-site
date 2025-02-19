@@ -9,7 +9,7 @@ import About from './pages/About';
 import Service from './pages/Service';
 // import Diagram from './pages/Diagram';
 // import EvChargingApp from './pages/EvChargingApp';
-import { HashRouter as Router, Routes, Route} from 'react-router-dom';
+import {  Routes, Route} from 'react-router-dom';
 import Contact from './pages/Contact';
 import PageMenu from './common/PageMenu';
 import Footer from './common/Footer';
@@ -19,7 +19,6 @@ const App = () => {
   return (
     <div className="main-wrapper">
       < PageMenu />
-      <Router>
         <Routes>
           <Route path='/' element={<Dashboard /> } />
           <Route path='/Contact' element={<Contact />} />
@@ -27,7 +26,6 @@ const App = () => {
           <Route path='/Service' element={<Service />} />
           <Route path='/Rooms' element={<Rooms />} />
         </Routes>
-      </Router>
       <Footer />
     </div>
   );
