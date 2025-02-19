@@ -34,7 +34,7 @@ const PageMenu = () => {
                 </div>
               </Col>
             </div>
-            <Navbar expand="lg" className="bg-body-tertiary p-lg-0 p-3 navbar-dark">
+            <Navbar expand="lg" className=" p-lg-0 p-3 navbar-dark">
               <Navbar.Brand href="#home" className='logo d-block d-lg-none'><h1 className='m-0 text-uppercase'>HOTELWOW</h1></Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className=''>
