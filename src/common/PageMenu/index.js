@@ -1,12 +1,15 @@
 import './index.scss';
-import { Container, Nav, Navbar, NavDropdown, Col, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Col, Row, Button } from 'react-bootstrap';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { BsFacebook, BsInstagram, BsSkype, BsSnapchat, BsTelegram } from 'react-icons/bs';
-import { useState } from 'react'; // Import useState
-import { Link } from 'react-router-dom'; // Use React Router Links
+import { useState } from 'react'; 
+import { Link } from 'react-router-dom'; 
+import { useAuth0 } from "@auth0/auth0-react";
 
 const PageMenu = () => {
-  const [expanded, setExpanded] = useState(false); // State to track navbar open/close
+  const [expanded, setExpanded] = useState(false); 
+  const {loginWithRedirect , isAuthenticated ,  logout ,user} = useAuth0();
+
 
   return (
     <>
@@ -65,10 +68,23 @@ const PageMenu = () => {
                   </NavDropdown>
                   <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)}>Contact</Nav.Link>
                 </Nav>
+                
 
-                <a href='phonepe://pay?amount=10&phonenumber=6265480149' className='premium-btn btn btn-primary px-5 py-4 rounded-0 d-none d-lg-block h-100'>
-                  Premium
-                </a>
+                {
+                  isAuthenticated && (
+                      <p className='text-white pe-4 mb-0'>{user.name}</p>)
+                }
+                
+                { !isAuthenticated ? (<Button onClick={() => loginWithRedirect()} className='premium-btn btn btn-primary px-5 py-4 rounded-0 d-none d-lg-block h-100'>
+                  Log In
+                </Button> )
+                :
+                (<button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='premium-btn btn btn-primary px-5 py-4 rounded-0 d-none d-lg-block h-100'>
+                Log Out
+              </button>
+              )}
+                
+                
               </Navbar.Collapse>
             </Navbar>
 

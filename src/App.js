@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import PageMenu from './common/PageMenu';
 import Footer from './common/Footer';
 import Rooms from './pages/Rooms';
+import Bookings from './common/Bookings';
 
 const App = () => {
   return (
@@ -21,10 +22,11 @@ const App = () => {
       < PageMenu />
         <Routes>
           <Route path='/' element={<Dashboard /> } />
-          <Route path='/Contact' element={<Contact />} />
-          <Route path='/About' element={<About />} />
-          <Route path='/Service' element={<Service />} />
-          <Route path='/Rooms' element={<Rooms />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/service' element={<Service />} />
+          <Route path='/rooms' element={<Rooms />} />
+          <Route path='/bookings' element={<Bookings />} />
         </Routes>
       <Footer />
     </div>

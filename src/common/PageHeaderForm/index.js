@@ -1,71 +1,96 @@
-import './index.scss';
-import { Col, Container, Row } from 'react-bootstrap';
+import  { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Datetime from "react-datetime";
-import React, { useState } from 'react';
+import { Col, Container, Row } from "react-bootstrap";
 
 function PageHeaderForm() {
-  const [selectedDateTime, setSelectedDateTime] = useState(null);
-  const handleDateTimeChange = (date) => setSelectedDateTime(date);
+  const navigate = useNavigate();
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
+  const [selectedAdult, setSelectedAdult] = useState("1");
+  const [selectedChild, setSelectedChild] = useState("0");
+  const [roomType, setRoomType] = useState("Deluxe");
+  const [roomRate, setRoomRate] = useState("$100/Night");
+  const [customerName, setCustomerName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
-  const [selectedDateTime2, setSelectedDateTime2] = useState(null);
-  const handleDateTimeChange2 = (date) => setSelectedDateTime2(date);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // New state for selects
-  const [selectedAdult, setSelectedAdult] = useState("Adult");
-  const [selectedChild, setSelectedChild] = useState("Child");
+    if (!customerName || !email || !phone || !checkIn || !checkOut) {
+      alert("Please fill all fields before submitting.");
+      return;
+    }
+
+    let bookings = JSON.parse(localStorage.getItem("bookedRooms")) || [];
+
+    let newBooking = {
+      customerName,
+      email,
+      phone,
+      textheading: roomType,
+      roomrate: roomRate,
+      checkin: checkIn ? checkIn.format("YYYY-MM-DD HH:mm") : "Not Selected",
+      checkout: checkOut ? checkOut.format("YYYY-MM-DD HH:mm") : "Not Selected",
+      adults: selectedAdult,
+      children: selectedChild,
+      roomimg: "", 
+      bookedVia: "form",
+    };
+
+    bookings.push(newBooking);
+    localStorage.setItem("bookedRooms", JSON.stringify(bookings));
+    alert("Booking Successful!");
+
+    navigate("/bookings"); 
+  };
 
   return (
-    <Container className='pb-5 header-form'>
-      <div className='bg-white shadow header-form-inner'>
-        <Row className='g-2'>
-          <Col md={10}>
-            <Row className='g-2'>
-              <Col md={3}> 
-                <Datetime
-                  value={selectedDateTime2}
-                  onChange={handleDateTimeChange2}
-                  dateFormat="YYYY-MM-DD"
-                  timeFormat="HH:mm"
-                  inputProps={{ placeholder: 'Check in' }}
-                />
-              </Col>
-              <Col md={3}> 
-                <Datetime
-                  value={selectedDateTime}
-                  onChange={handleDateTimeChange}
-                  dateFormat="YYYY-MM-DD"
-                  timeFormat="HH:mm"
-                  inputProps={{ placeholder: 'Check out' }}
-                />
-              </Col>
-              <Col md={3}> 
-                <select 
-                  className='form-select' 
-                  value={selectedAdult} 
-                  onChange={(e) => setSelectedAdult(e.target.value)}
-                >
-                  <option value="Adult">Adult</option>
-                  <option value="1">Adult 1</option>
-                  <option value="2">Adult 2</option>
-                  <option value="3">Adult 3</option>
-                </select>
-              </Col>
-              <Col md={3}> 
-                <select 
-                  className='form-select' 
-                  value={selectedChild} 
-                  onChange={(e) => setSelectedChild(e.target.value)}
-                >
-                  <option value="Child">Child</option>
-                  <option value="1">Child 1</option>
-                  <option value="2">Child 2</option>
-                  <option value="3">Child 3</option>
-                </select>
-              </Col>
-            </Row>
+    <Container className="pb-5 header-form">
+      <div className="bg-white shadow header-form-inner p-4">
+        <h3 className="mb-3 text-center">Book Your Room</h3>
+        <Row className="g-3">
+          <Col md={6}>
+            <input type="text" className="form-control" placeholder="Full Name" value={customerName} onChange={(e) => setCustomerName(e.target.value)} />
           </Col>
-          <Col md={2}>
-            <button type="button" className='btn-primary text-uppercase w-100 text-white btn'>Submit</button>
+          <Col md={6}>
+            <input type="email" className="form-control" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </Col>
+          <Col md={6}>
+            <input type="tel" className="form-control" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          </Col>
+          <Col md={6}>
+            <select className="form-select" value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+              <option value="Deluxe">Deluxe Room</option>
+              <option value="Suite">Suite Room</option>
+              <option value="Standard">Standard Room</option>
+            </select>
+          </Col>
+          <Col md={3}>
+            <Datetime value={checkIn} onChange={setCheckIn} inputProps={{ placeholder: "Check-in" }} />
+          </Col>
+          <Col md={3}>
+            <Datetime value={checkOut} onChange={setCheckOut} inputProps={{ placeholder: "Check-out" }} />
+          </Col>
+          <Col md={3}>
+            <select className="form-select" value={selectedAdult} onChange={(e) => setSelectedAdult(e.target.value)}>
+              <option value="1">1 Adult</option>
+              <option value="2">2 Adults</option>
+              <option value="3">3 Adults</option>
+            </select>
+          </Col>
+          <Col md={3}>
+            <select className="form-select" value={selectedChild} onChange={(e) => setSelectedChild(e.target.value)}>
+              <option value="0">No Child</option>
+              <option value="1">1 Child</option>
+              <option value="2">2 Children</option>
+            </select>
+          </Col>
+          <Col md={12}>
+            <button type="button" className="btn btn-primary w-100 text-uppercase" onClick={handleSubmit}>
+              Submit Booking
+            </button>
           </Col>
         </Row>
       </div>
