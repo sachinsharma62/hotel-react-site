@@ -10,6 +10,7 @@ function PageHeaderForm() {
   const [selectedAdult, setSelectedAdult] = useState("1");
   const [selectedChild, setSelectedChild] = useState("0");
   const [roomType, setRoomType] = useState("Deluxe");
+  const [roomRate, setRoomRate] = useState("$100/Night");
   const [customerName, setCustomerName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
