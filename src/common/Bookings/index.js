@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import PageHeader from "../PageHeader";
 
 function Bookings() {
 
@@ -11,8 +12,10 @@ function Bookings() {
   }, []);
 
   return (
+    <>
+    <PageHeader />
     <Container className='py-5'>
-      <h2 className='text-center mb-4'>My Bookings</h2>
+      
       <Row>
         {bookings.length > 0 ? (
           bookings.map((room, index) => (
@@ -36,6 +39,7 @@ function Bookings() {
         )}
       </Row>
     </Container>
+    </>
   );
 }
 
