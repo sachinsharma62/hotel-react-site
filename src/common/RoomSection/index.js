@@ -1,5 +1,6 @@
 import './index.scss';
 import { Col, Container, Row, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 import roomimg1 from '../../assets/images/room-1.jpg';
 import roomimg2 from '../../assets/images/room-2.jpg';
 import roomimg3 from '../../assets/images/room-3.jpg';
@@ -42,16 +43,25 @@ const Roomsdata = [
 ];
 
 function RoomSection() {
+  const navigate = useNavigate(); 
   const handleBooking = (room) => {
-    let bookings = JSON.parse(localStorage.getItem('bookedRooms')) || [];
+    let bookings = JSON.parse(localStorage.getItem("bookedRooms")) || [];
+
     bookings.push({
       textheading: room.textheading,
       roomrate: room.roomrate,
-      roomimg: room.roomimg, // ✅ Image save kar raha hai
+      roomimg: room.roomimg, 
+      bed: room.bed,
+      bath: room.bath,
+      Wifi: room.Wifi,
+      textdetails: room.textdetails,
       bookedVia: "card"
     });
-    localStorage.setItem('bookedRooms', JSON.stringify(bookings));
+
+    localStorage.setItem("bookedRooms", JSON.stringify(bookings));
     alert(`${room.textheading} booked successfully!`);
+
+    navigate("/bookings");
   };
   return (
     <Container className='py-5'>

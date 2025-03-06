@@ -1,4 +1,4 @@
-import  { React, useState } from "react";
+import  { React, useState ,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Datetime from "react-datetime";
 import { Col, Container, Row } from "react-bootstrap";
@@ -14,6 +14,23 @@ function PageHeaderForm() {
   const [customerName, setCustomerName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    switch (roomType) {
+      case "Deluxe":
+        setRoomRate("$100/Night");
+        break;
+      case "Suite":
+        setRoomRate("$150/Night");
+        break;
+      case "Standard":
+        setRoomRate("$80/Night");
+        break;
+      default:
+        setRoomRate("$100/Night");
+    }
+  }, [roomType]); 
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
