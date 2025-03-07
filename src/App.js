@@ -15,6 +15,7 @@ import PageMenu from './common/PageMenu';
 import Footer from './common/Footer';
 import Rooms from './pages/Rooms';
 import Bookings from './common/Bookings';
+import BookingForm from './common/BookingForm';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/service' element={<Service />} />
           <Route path='/rooms' element={<Rooms />} />
           <Route path='/bookings' element={<Bookings />} />
+          <Route path='/booking-form' element={<BookingForm />} />
         </Routes>
       <Footer />
     </div>

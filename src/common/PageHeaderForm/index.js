@@ -1,4 +1,4 @@
-import  { React, useState ,useEffect} from "react";
+import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Datetime from "react-datetime";
 import { Col, Container, Row } from "react-bootstrap";
@@ -14,23 +14,19 @@ function PageHeaderForm() {
   const [customerName, setCustomerName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [wifi, setWifi] = useState("Yes");
+  const [bedType, setBedType] = useState("King Size");
+  const [bathroom, setBathroom] = useState("Attached");
 
-  useEffect(() => {
-    switch (roomType) {
-      case "Deluxe":
-        setRoomRate("$100/Night");
-        break;
-      case "Suite":
-        setRoomRate("$150/Night");
-        break;
-      case "Standard":
-        setRoomRate("$80/Night");
-        break;
-      default:
-        setRoomRate("$100/Night");
-    }
-  }, [roomType]); 
+  // Room Type Change Handler
+  const handleRoomTypeChange = (e) => {
+    const selectedRoom = e.target.value;
+    setRoomType(selectedRoom);
 
+    if (selectedRoom === "Deluxe") setRoomRate("$100/Night");
+    else if (selectedRoom === "Suite") setRoomRate("$150/Night");
+    else if (selectedRoom === "Standard") setRoomRate("$80/Night");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,17 +42,20 @@ function PageHeaderForm() {
       customerName,
       email,
       phone,
-      textheading: roomType,
-      roomrate: roomRate,
-      checkin: checkIn ? checkIn.format("YYYY-MM-DD HH:mm") : "Not Selected",
-      checkout: checkOut ? checkOut.format("YYYY-MM-DD HH:mm") : "Not Selected",
+      roomType,
+      roomRate,
+      checkIn: checkIn ? checkIn.format("YYYY-MM-DD HH:mm") : "Not Selected",
+      checkOut: checkOut ? checkOut.format("YYYY-MM-DD HH:mm") : "Not Selected",
       adults: selectedAdult,
       children: selectedChild,
-      roomimg: "", 
+      wifi,
+      bedType,
+      bathroom,
       bookedVia: "form",
     };
 
-    bookings.push(newBooking);
+    // Latest booking sabse pehle add ho
+    bookings.unshift(newBooking);
     localStorage.setItem("bookedRooms", JSON.stringify(bookings));
     alert("Booking Successful!");
 
@@ -78,11 +77,14 @@ function PageHeaderForm() {
             <input type="tel" className="form-control" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </Col>
           <Col md={6}>
-            <select className="form-select" value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+            <select className="form-select" value={roomType} onChange={handleRoomTypeChange}>
               <option value="Deluxe">Deluxe Room</option>
               <option value="Suite">Suite Room</option>
               <option value="Standard">Standard Room</option>
             </select>
+          </Col>
+          <Col md={12}>
+            <p><strong>Price:</strong> {roomRate}</p>
           </Col>
           <Col md={3}>
             <Datetime value={checkIn} onChange={setCheckIn} inputProps={{ placeholder: "Check-in" }} />
@@ -104,6 +106,31 @@ function PageHeaderForm() {
               <option value="2">2 Children</option>
             </select>
           </Col>
+
+          {/* Additional Features */}
+          <Col md={4}>
+            <label>WiFi</label>
+            <select className="form-select" value={wifi} onChange={(e) => setWifi(e.target.value)}>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </Col>
+          <Col md={4}>
+            <label>Bed Type</label>
+            <select className="form-select" value={bedType} onChange={(e) => setBedType(e.target.value)}>
+              <option value="King Size">King Size</option>
+              <option value="Queen Size">Queen Size</option>
+              <option value="Single">Single</option>
+            </select>
+          </Col>
+          <Col md={4}>
+            <label>Bathroom</label>
+            <select className="form-select" value={bathroom} onChange={(e) => setBathroom(e.target.value)}>
+              <option value="Attached">Attached</option>
+              <option value="Shared">Shared</option>
+            </select>
+          </Col>
+
           <Col md={12}>
             <button type="button" className="btn btn-primary w-100 text-uppercase" onClick={handleSubmit}>
               Submit Booking
