@@ -14,11 +14,11 @@ function BookingForm() {
     checkOut: "",
     adults: "",
     children: "",
-    roomType: roomDetails.textheading || "",  // Auto-fill Room Name
-    roomRate: roomDetails.roomrate || "",    // Auto-fill Room Price
-    wifi: roomDetails.Wifi || "",            // Auto-fill WiFi
-    bedType: roomDetails.bedType || "",              // Auto-fill Bed
-    bathroom: roomDetails.bath || "",        // Auto-fill Bathroom
+    roomType: roomDetails?.textheading || "", 
+    roomRate: roomDetails?.roomrate || "",   
+    wifi: roomDetails?.Wifi || "",    
+    bedType: roomDetails?.bedType || "",
+    bathroom: roomDetails?.bath || "", 
   });
 
   const handleChange = (e) => {
@@ -39,23 +39,23 @@ function BookingForm() {
       <Form onSubmit={handleSubmit} action="/bookings">
         <Form.Group>
           <Form.Label>Room Type</Form.Label>
-          <Form.Control type="text" value={formData.roomType} disabled />
+          <Form.Control type="text" value={formData.roomType} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Room Price</Form.Label>
-          <Form.Control type="text" value={formData.roomRate} disabled />
+          <Form.Control type="text" value={formData.roomRate} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Bed</Form.Label>
-          <Form.Control type="text" value={formData.bedType} disabled />
+          <Form.Control type="text" value={formData.bedType} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Bathroom</Form.Label>
-          <Form.Control type="text" value={formData.bathroom} disabled />
+          <Form.Control type="text" value={formData.bathroom} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>WiFi</Form.Label>
-          <Form.Control type="text" value={formData.wifi} disabled />
+          <Form.Control type="text" value={formData.wifi} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Name</Form.Label>
@@ -87,7 +87,7 @@ function BookingForm() {
             <option value="3">3 Children</option>
           </Form.Select>
         </Form.Group>
-        {/* ✅ Adults Selection */}
+       
         <Form.Group>
           <Form.Label>Adults</Form.Label>
           <Form.Select name="adults" value={formData.adults} onChange={handleChange} required>
